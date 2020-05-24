@@ -25,4 +25,3 @@ Today we went to the Osaka Castle. The main character of this castle is Toyotomi
 Later in the afternoon, we spent nearly two hours walking around the shopping mall. I was amazed by the facilities in the central square.
 
 The picture is not taken yet. I would add it tomorrow. Tomorrow we would go to the USJ for fun. Hope all is well!
-![Picture example]({{site.baseurl}}/assets/img/just-to-do.jpg)

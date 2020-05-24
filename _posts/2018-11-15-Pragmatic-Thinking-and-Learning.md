@@ -31,7 +31,7 @@ This blog is the notes for the book: **Pragmatic Thinking and Learning: Refactor
     > "Ignorance more frequently begets confidence than does knowledge." -- Charles Darwin
 - Most people are just advanced beginners.
 
-![skill distribution](/assets/img/posts/skill-dist.jpg)
+![skill distribution]({{site.baseurl}}/assets/img/posts/skill-dist.jpg)
 
 - Deliberate practice requires four conditions: 
     - A well-defined task.
@@ -71,15 +71,15 @@ Next Actions:
 
 - L-mode and R-mode. R-mode sees forest; L-mode sees trees. When one CPU takes the resources, the other cannot use.
 
-![shared-bus-theory](/assets/img/shared-bus-theory.jpg)
+![shared-bus-theory]({{site.baseurl}}/assets/img/posts/shared-bus-theory.jpg)
 
-![L-mode](/assets/img/l-mode.jpg) | ![R-mode](/assets/img/r-mode.jpg)
+![L-mode]({{site.baseurl}}/assets/img/posts/l-mode.jpg) | ![R-mode]({{site.baseurl}}/assets/img/posts/r-mode.jpg)
 
 - Our brain needs refreshing. If it stops running, it forgets everything.
 - The idea from R-mode is difficult to describe. Once you try to describe it in detail, it may go away.
 - Be ready to capture any insight or idea at any time. Use notepad.
 
-![good ideas](/assets/img/good-idea.jpg)
+![good ideas]({{site.baseurl}}/assets/img/posts/good-idea.jpg)
 
 -  Learning by **synthesis** *vs.* Learning by **analysis**. The better way to learn a frog is to build a one.
     - I found an article on [Active Learning by Synthesis](http://tom.spiglanin.com/2012/05/learning-by-synthesis/). Not sure it's the same idea as that of Andy's.

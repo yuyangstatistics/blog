@@ -24,7 +24,7 @@ For example, after understanding the solution of one MATH 8651 problem, try it f
 
 Use the technique __*spaced repitition*__ to move working memory to long-term memory.
 
-![](/assets/img/all-at-once.jpg) | ![A little every day](/assets/img/a-little-every-day.jpg)
+![]({{site.baseurl}}/assets/img/posts/all-at-once.jpg) | ![A little every day]({{site.baseurl}}/assets/img/posts/a-little-every-day.jpg)
 
 Relative websites: [BrainFacts](http://www.brainfacts.org/)
 
@@ -41,7 +41,7 @@ Chunking helps the brain to learn efficiently. Once we chunk an idea, we don't n
     - Understanding how a problem was solved doesn't mean you have created a chunk that you could easily call to mind later. That partly explains why you understand an idea in class, but if you don't review it fairly soon, it can seem imcomprehensible when you prepare for the test.
     - In math and science related subjects, close the book and test yourself whether you can solve the problem you think you understand. This would speed up your learning at this stage. You see and understand one point, but this doesn't mean you can do it yourself. The first time you understand something is when you can actually do it yourself. Only doing it yourself helps create the neural patterns that underlie true mastery.
 3. Gaining context. 
-    ![context](/assets/img/context.jpg)
+    ![context]({{site.baseurl}}/assets/img/posts/context.jpg)
     - Context means going beyond the initial problem and seeing more broadly, repeating and practicing with both related and unrelated problems, so that you know when to use the chunk and when not to use it. Chunk is like a tool, and we not only need to know how to use it, but also when to use it.
     - Chunking may involve your learning how to use a certain problem-solving technique. Context means learning when to use that technique instead of some other technique. 
     - Doing a rapid two-minute picture walk through a chapter in a book before you begin studying it, glancing at pictures and section headings, can allow you to gain a sense of the big picture. Once you get the big picture, fill in the details.
@@ -50,9 +50,9 @@ Chunking helps the brain to learn efficiently. Once we chunk an idea, we don't n
 
 1. Reread? **Recall and practice!**
     - Reread is just a repetition. Recalling and practicing would help you get a deeper understanding and learn more, and also helps to build chunks.
-    ![Recall](/assets/img/recall.jpg)
+    ![Recall]({{site.baseurl}}/assets/img/posts/recall.jpg)
     - Drawing the concept map, showing the relationships between concepts turns out to be the best way to learn. But one important thing is we need to first make sure the basic concepts are embedded in the brain before trying to make connections. Otherwise, it doesn't work.
-    ![concept-map](/assets/img/concept-map.jpg)
+    ![concept-map]({{site.baseurl}}/assets/img/posts/concept-map.jpg)
 
 2. Merely glancing at the solutions? Highlighting or underlining? You need to have the information persisting in your brain!
     - Merely glancing at a solution and thinking you truly know it is one of the most common illusions of competence in learning. Only by doing it yourself could you truly master the material well.
