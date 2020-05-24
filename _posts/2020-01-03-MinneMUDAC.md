@@ -3,8 +3,8 @@ title: MinneMUDAC 2019 Student Data Science Challenge
 date: 2020-01-03 12:28:12 -0500
 img: minnemudac.png
 comments: true
-categories: [Data_Science, MinneMUDAC]
-tags: [project]
+categories: [Data_Science]
+tags: [minnemudac]
 ---
 MinneMUDAC 2019 Student Data Challenge is organized by MinneAnalytics every year. There are several divisions: novice division, undergradutate division, and graduate division. For 2019, the problem is to predict the price of soybean future contracts in the volatile market for one week. 
 
