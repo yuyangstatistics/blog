@@ -16,14 +16,14 @@ description: >-                        # used by seo meta and the atom feed
   This is my personal blog, mainly to take notes and share ideas.
 
 # Replace with the website url, e.g. 'https://username.github.io'
-url: 'https://yuyang-yy.github.io'
+url: 'https://yuyangstatistics.github.io'
 
 author: Yu Yang                  # change to your full name
 
 avatar: /assets/img/sample/avatar.jpg   # support internet resources
 
 github:
-  username: yuyang-yy             # change to your github username
+  username: yuyangstatistics            # change to your github username
 
 twitter:
   username: YuYang97360922            # change to your twitter username
