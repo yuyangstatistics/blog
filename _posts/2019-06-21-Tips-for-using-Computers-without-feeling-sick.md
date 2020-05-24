@@ -1,7 +1,6 @@
 ---
 title: Tips for Using Computers without Feeling Sick
 date: 2019-06-21 12:28:12 -0500
-img: computer-vision-syndrome.jpg
 categories: [Life]
 tags: [computer]
 ---
@@ -10,7 +9,7 @@ Credits to [What is Computer Vision Syndrome (CVS) and Tips on How to Stop It](h
 
 1. Use eye drops.
 2. Look away from the monitor periodcally. 20-20-20 rule: look away from the computer monitor every 20 minutes into a distance at least 20 feet from you for 20 seconds.
-![20-20-20 rule]({{site.baseurl}}/assets/img/20-20-20-rule.jpg)
+![20-20-20 rule](assets/img/posts/20-20-20-rule.jpg)
 3. Blink intentionally.
 4. Close eyes periodically.
 5. Massage eyebrows.

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery Learning</title>
+        <script src="jquery.js"></script>
+        <style>
+        .errorBox {
+            border: 2px solid red;
+        }
+        .successBox {
+            border: 2px solid green;
+        }
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+        </style>
+    </head>
+    <body>
+        <!-- Click -->
+
+        <button id="clickMe">Click Me!</button>
+        <p>You have clicked the button <span id="numClicks">0 times</span>.</p>
+
+        <script>
+        var clicks = 0;
+        function clickHandler() {
+            clicks ++;
+            var numClicksSpan = $('#numClicks');
+            if (clicks == 1) {
+                numClicksSpan.html('once');
+            } else {
+                numClicksSpan.html(clicks + ' times');
+            }
+        }
+        $('#clickMe').click(clickHandler);
+        </script>
+
+
+        <!-- Keyup -->
+        <input id="itemField">
+        <ul>
+        <span id="list"></span>
+        </ul>
+
+        <script>
+        function keyPressHandler(e) {
+            if (e.keyCode == 13) {  // keyCode
+                $('#list').append('<li>' + $('#itemField').val() + '</li>');
+                $('#itemField').val('');
+            }
+        }
+        $('#itemField').keyup(keyPressHandler);
+        </script>
+
+
+        <!-- Multiple functions on one object -->
+        <div>
+            <ul>
+                <li class="highlight">dog</li>
+                <li class="highlight">cat</li>
+                <li>elephant</li>
+                <li>bear</li>
+            </ul>
+        </div>
+         <script>
+         $('li.highlight').on({
+             mouseenter: function() {
+                 $(this).css('color', 'red');
+                 $(this).css('font-weight', 'bold');
+             },
+             mouseleave: function() {
+                $(this).css('color', 'black');
+                $(this).css('font-weight', 'normal');
+             },
+             click: function() {
+                 $(this).css('background-color', 'yellow');
+             }
+         });
+         </script>
+
+         <!-- Forms -->
+         <form>
+             <select name="gender">
+                 <option value="male">Male</option>
+                 <option value="female">Female</option>
+                 <option value="other">Other</option>
+             </select>
+             
+             <br>
+             <input type="radio" name="species" value="dog">Dog</input>
+             <input type="radio" name="species" value="cat">Cat</input>
+             <input type="radio" name="species" value="bird">Bird</input>
+             
+             <br>
+             <input type="checkbox" name="features" value="happy">Happy</input>
+             <input type="checkbox" name="features" value="cute">Cute</input>
+             <input type="checkbox" name="features" value="smart">Smart</input>
+         </form>
+
+         <p>I'd like to buy a new <span id="featureSpan"></span> 
+            <span id="genderSpan"></span> <span id="animalSpan">animal</span>.
+        </p>
+        
+        <script>
+        // handling select box
+        $("select[name='gender']").change(function() {  // name='gender', not name=='gender'
+            $('#genderSpan').html($(this).val());
+        });
+
+        // handling radio buttons
+        $("input:radio[name='species']").change(function(){
+            if ($(this).prop('checked')) {
+                $('#animalSpan').html($(this).val());
+            }
+        });
+
+        // handling checkbox buttons
+        var allChecked = [];
+        $("input:checkbox[name='features']").change(function() {
+            var value = $(this).val();
+            if ($(this).prop('checked')) {
+                allChecked.push(value);
+            } else {
+                var index = allChecked.indexOf(value);
+                if (index != -1) {
+                    allChecked.splice(index, 1);
+                }
+            }
+            
+            $('#featureSpan').html('');  // don't forget this line
+            for (var i=0; i < allChecked.length; i++) {
+                $('#featureSpan').append(allChecked[i]);
+                if (i < allChecked.length - 1) {
+                    $('#featureSpan').append(', ');
+                } else {
+                    $('#featureSpan').append(' ');
+                }
+            }
+        });
+        </script>
+
+
+        <!-- Validate password -->
+        <!-- check the style file in the header -->
+
+        <input type="password" name="password">
+        <br>
+        <span id="errorMessage" class = "error" hidden>Please fix the following errors: </span>
+        <ul>
+            <li id="length10" class = "error" hidden>The password must be at least 10 characters long.</li>
+            <li id="number" class = "error" hidden>The password must contain numbers.</li>
+        </ul>
+        <span id="successMessage" class="success" hidden>Password vefied!</span>
+        <br>
+        <button name="submit">Validate Password</button>
+
+        <script>
+        
+        $("button[name='submit']").click(function() {  // [] should be in a couple.
+            var passwordField = $("input:password[name='password']");
+            var password = passwordField.val();
+            var isFine = true;  // these three lines should be inside the function
+            if (password.length < 10) {
+                isFine = false;
+                $('#length10').show();
+            }
+            if (! /\d/.test(password)) {
+                isFine = false;
+                $('#number').show();
+            }
+            if (isFine) {
+                $('.error').hide();
+                $('#successMessage').show();
+                passwordField.removeClass('errorBox').addClass('successBox');
+            } else {
+                $('#successMessage').hide();
+                $('#errorMessage').show();
+                passwordField.removeClass('successBox').addClass('errorBox');
+            }
+            return false;
+        });
+        </script>
+            
+    </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div>
+            The current date/time is <span id="dateTime"> </span>. And you have visited 
+            this page <span id="report"> </span> times.
+            <p> Your last visit was <span id="lastVisitDate"></span>.</p>
+        </div>
+
+        <script>
+        var dateTimeField = document.getElementById('dateTime');
+        dateTimeField.innerHTML = new Date();
+
+        var timesVisited = 0;
+        var lastVisitDate = 'never';
+
+        if (localStorage.lastVisit) {
+            var lastVisit = JSON.parse(localStorage.lastVisit);
+            timesVisited = lastVisit.numVisits;
+            lastVisitDate = lastVisit.date;
+        }
+
+        timesVisited ++;
+
+        document.getElementById('report').innerHTML = timesVisited;
+        document.getElementById('lastVisitDate').innerHTML = lastVisitDate;
+
+        if (timesVisited > 10) {
+            document.getElementById('report').style.backgroundColor = 'yellow';
+        }
+
+        var myLastVisit = {};
+        myLastVisit.numVisits = timesVisited;
+        myLastVisit.date = new Date();
+        localStorage.lastVisit = JSON.stringify(myLastVisit);
+        </script>
+
+
+        <!-- respond to user events: click -->
+        <button id="clickMe">Click Me!</button>
+        <p>You have clicked the botton <span id="numClicks">0 times</span>.</p>
+
+        <script>
+        var clicks = 0;
+
+        function clickHandler() {
+            clicks++;
+            if (clicks == 1) {
+                document.getElementById('numClicks').innerHTML = 'once';
+            } else {
+                document.getElementById('numClicks').innerHTML = clicks + ' times';
+            }
+        }
+
+        var button = document.getElementById('clickMe');
+        button.addEventListener('click', clickHandler);
+        </script>
+
+
+        <!-- respond to user events: mouseover and mouseout -->
+        <div id="mouseOverMe">Put the mouse here!</div>
+        <div class="highlightText">This is some text.</div>
+        <div>This is some other text.</div>
+        <div class="highlightText">This text is important, too.</div>
+
+        <script>
+        function makeBold() {
+            var divs = document.getElementsByClassName('highlightText');
+            for(var i=0; i < divs.length; i++) {
+                divs[i].style.color = 'red';
+                divs[i].style.fontWeight = 'bold';
+            }
+        }
+        function restore() {
+            var divs = document.getElementsByClassName('highlightText');
+            for(var i=0; i < divs.length; i++) {
+                divs[i].style.color = 'black';
+                divs[i].style.fontWeight = 'normal';
+            }
+        }
+
+        var mouseOverMe = document.getElementById('mouseOverMe');
+        mouseOverMe.addEventListener('mouseover', makeBold);
+        mouseOverMe.addEventListener('mouseout', restore);
+        </script>
+
+
+        <!-- Input from keyboard -->
+        <input id="nameInput">
+        <p>Hello, <span id="nameField">guest</span>.</p>
+
+        <script>
+        function nameHandler(e){
+            if (e.keyCode == 13) {
+                var nameInput = document.getElementById('nameInput');
+                var nameField = document.getElementById('nameField');
+                nameField.innerHTML = nameInput.value;
+                nameField.style.color = 'cyan';
+                nameField.style.textTransform = 'capitalize';
+            }
+        }
+        document.getElementById('nameInput').addEventListener('keyup', nameHandler);
+        </script>
+
+    </body>
+</html>

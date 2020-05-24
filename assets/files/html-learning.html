@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Web Page</title>
+	<link rel="stylesheet" type="text/css" href="/mystyle.css">
+	<meta name="description" content="Learning about html">
+	<meta name="keywords" content="html, web development">
+	<script src="code.js"></script>
+	<!-- Internal style -->
+	<style>
+		h1 {
+			font-weight: 3;
+		}
+		.odd {
+			color: green;
+		}
+		.even {
+			color: white;
+			background-color: blue;
+		}
+		#origin {
+			color: yellow;
+			font-family: courier;
+			background-color: green;
+		}
+	</style>
+</head>
+<body>
+	<h1 title="Welcome!"> HTML </h1>
+	<p> HTML is a plain-text, human-readable language that is used to represent the content on the Web. It specifies how to structure the data but not how to display it. It uses tags to provide structure. </p>
+
+	<h2> Creating bookmarks using Relative URLs </h2>
+	<a href="#paragraph"> Paragraph </a> <br>
+	<a href="#bold-italics"> Bold and Italics </a> <br>
+	<a href="#break"> Break </a> <br>
+	<a href="#div-span"> div and span tag</a> <br>
+	<a href="#comment"> Comments </a> <br>
+	<a href="#symbols"> HTML symbols &amp; special characters</a> <br>
+	<a href="#attributes"> Attributes </a> <br>
+	<a href="#css"> CSS </a> <br>
+	<a href="#list"> List </a> <br>
+	<a href="#form"> Forms </a> <br>
+	<a href="#image-link"> Images and Links </a> <br>
+	<a href="bootstrap.html"> Bootstrap </a> <br>
+
+
+	<h2 id="paragraph"> Paragraph</h2>
+	<p> This is a paragraph within the p tag that expresses a single thought or idea. The paragraph should be surrounded with a vertical white space buffer both before and after the paragraph. html will automatically ignore white space.</p>
+	<p> Browser will determine the font and size depending on the header magnitude. </p>
+
+	<h2 id="bold-italics"> Bold and Italics </h2>
+	<p> We could use <b> b tag </b> and <strong> strong tag </strong> to set the text to be bold. Use <i> i tag </i> and <em> em tag </em>to make the text italicized. </p>
+
+	<h2 id="break"> Break </h2>
+	<p> There are two types of break tags. hr tag will create a horizontal line to sepeprate two paragraphs. </p>
+	<hr>
+	<p> While the br tag will insert a blank line between two paragraphs. </p>
+	<br>
+	<p> This is the third paragraph in this section. </p>
+
+	<h2 id="div-span"> div and span tag</h2>
+	<div>
+		<p> The div tag provides additional structure to web page. It is often used for menu or navigation bar, photo galeries, and so on. </p>
+		<p> The div tag is to contain larger chunks while the span is to contain smaller pieces. <span style="color: red"> The span tag will not start with a new line, and it is usually used to specify some format. </span> </p>
+		<p> When using the bootstrap framework, we should set it to be the class "container" and "rows". </p>
+	</div>
+
+	<h2 id="comment"> Comments </h2>
+	<!-- This part is commented out --->
+
+	<h2 id="symbols"> HTML symbols &amp; special characters</h2>
+	<div>
+		<p> The format should be "ampersand + name + ; ". </p>
+		<table border="1">
+			<tr>
+				<th> HTML Entity</th>
+				<th> Appearance </th>
+			</tr>
+			<tr align="center">
+				<td>&ampnbsp;</td>
+				<td>Non-breaking space; allows for extra white space between words</td>
+			</tr>
+			<tr align="left">
+				<td>&amplt;</td>
+				<td>&lt;</td>
+			</tr>
+			<tr align="right">
+				<td>&ampgt;</td>
+				<td>&gt;</td>
+			</tr>
+			<tr>
+				<td>&ampamp;</td>
+				<td>&amp;</td>
+			</tr>
+			<tr>
+				<td>&ampcopy;</td>
+				<td>&copy; &nbsp; means copyright</td>
+			</tr>
+			<tr>
+				<td>&ampreg;</td>
+				<td>&reg; &nbsp; means registration</td>
+			</tr>
+		</table>
+	</div>
+
+	<h2 id="attributes"> Attributes </h2>
+	<p title="Core attributes"> Core attributes are: <span title="test title">title</span>, <span style="color: red; font-family: courier">style, use key:value pairs, seperated by semicolons.</span> Hello <span style="color: white; background-color: green; font-family: verdana; font-size: 200%; text-align: right">World!</span></p>
+	<p> Another two important attributes: <b>id</b> and <b>class</b>. id is specific to one element while class can include many elements. </p>
+	<p class="odd"> 1 is an odd number. </p>
+	<p class="even"> 2 is an even number. </p>
+	<p class="odd"> 3 is an odd number. </p>
+	<p class="even"> 4 is an even number. </p>
+	<p class="odd"> 5 is an odd number. </p>
+	<p class="even"> 6 is an even number. </p>
+	<p id="origin"> 0 is the origin. </p>
+
+	<h2 id="css"> CSS </h2>
+	<p> The Web browser gets the html from the server's response through HTTP. Then it tries to get access to the CSS file. After that, the browser renders the html page. The basic elements of style is: selector, property, and value. . for class, # for id. </p>
+
+	<h2 id="list"> List </h2>
+	<div>
+		<p> Use type to style ordered list: "1"(default), "A", "a", "I", "i". Use list-style-type to style unordered list: disc(default), circle, square, none.</p>
+		<ul style="list-style-type: circle;">
+			<li>Cup</li>
+			<li>Month</li>
+				<ol type="A">
+					<li>January</li>
+					<li>Febrary</li>
+					<li>March</li>
+				</ol>
+			<li>Desk</li>
+		</ul>
+	</div>
+
+	<h2 id="form"> Forms </h2>
+	<div>
+		<p> Forms can be used to collect information from the users. Use <b>form</b> tag. Use type attribute to control the type of data you want. <b>radio</b> means users can only choose one of them. <b>checkbox</b> can choose multiple. </p>
+		<form>
+			<select name="gender">
+				<option value="male">Male</option>
+				<option value="female">Female</option>
+				<option value="undefined">Undefined</option>
+			</select>
+			<br> Full Name:
+			<input type="text" name="username">
+
+			<br> Email Address:
+			<input type="Email" name="email">
+
+			<br> Password:
+			<input type="Password" name="password">
+
+			<br> Date of Birth:
+			<input type="Date" name="dob">
+
+			<br> Graduation Year:
+			<input type="range" name="gradYear" min="1950" max="2020">
+
+			<br> Gender:
+			<input type="radio" name="gender" value="male">Male
+			<input type="radio" name="gender" value="female">Female
+			<input type="radio" name="gender" value="undisclosed">Undisclosed
+
+			<br> Race: 
+			<input type="checkbox" name="race" value="afrAmer">African American
+			<input type="checkbox" name="race" value="asian">Asian
+			<input type="checkbox" name="race" value="white">White
+			<input type="checkbox" name="race" value="amerIndian">American Indian
+			<input type="checkbox" name="race" value="pacIsl">Pacific Islander
+			<input type="checkbox" name="race" value="other">Other
+
+			<br> Favorite Color:
+			<input type="color" name="favcolor">
+
+			<br> Resume Submission:
+			<input type="file" name="resume">
+
+			<br>
+			<input type="submit" name="submit">
+			<input type="reset" name="reset">
+		</form>		
+		<img src="images/input-types.png" alt="form input types" height="500px" width="700px">
+	</div>	
+
+	<h2 id="image-link"> Images and Links </h2>
+	<p> This is a course in edX and you could check the link below to learn more. </p>
+	<img src="images/edx.png" alt="edX">
+	<br>
+	<a href="https://courses.edx.org/courses/course-v1:PennX+SD4x+2T2017/course/" target="_self"> edX: Programming for the Web with Javascript</a>
+
+</body>
+</html>
