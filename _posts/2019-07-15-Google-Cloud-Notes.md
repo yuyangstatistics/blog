@@ -2,7 +2,6 @@
 title: Google Cloud Notes
 date: 2019-07-15 12:28:12 -0500
 img: gcp.jpeg
-comments: true
 categories: [Server]
 tags: [gcloud]
 ---

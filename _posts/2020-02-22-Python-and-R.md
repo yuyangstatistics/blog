@@ -2,7 +2,6 @@
 title: Python and R
 date: 2020-02-22 12:28:12 -0500
 img: python-r.jpg
-comments: true
 categories: [Programming]
 tags: [python]
 ---

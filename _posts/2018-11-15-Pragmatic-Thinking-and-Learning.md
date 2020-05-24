@@ -2,7 +2,6 @@
 title: Pragmatic Thinking and Learning
 date: 2018-11-15 12:28:12 -0500
 img: pragmatic-thinking.jpg
-comments: true
 categories: [Reading]
 tags: [thinking]
 ---

@@ -2,7 +2,6 @@
 title: R Packages
 date: 2020-02-19 12:28:12 -0500
 img: r-package.jpg
-comments: true
 categories: [Programming]
 tags: [R]
 ---

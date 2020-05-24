@@ -2,7 +2,6 @@
 title: Design and Analysis of Experiments
 date: 2019-03-16 12:28:12 -0500
 img: experiment-design.png
-comments: true
 categories: [Statistics]
 tags: [design]
 ---

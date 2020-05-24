@@ -2,7 +2,6 @@
 title: Kaggle Competition--Travelers Fraud Detection
 date: 2018-12-21 12:28:12 -0500
 img: kaggle_Travelers.png
-comments: true
 categories: [Data_Science]
 tags: [kaggle]
 ---

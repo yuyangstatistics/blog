@@ -2,7 +2,6 @@
 title: Reinstall My macOS
 date: 2018-07-05 12:28:12 -0500
 img: macos.jpg
-comments: true
 categories: [System]
 tags: [macos]
 ---

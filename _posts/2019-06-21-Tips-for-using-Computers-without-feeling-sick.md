@@ -2,7 +2,6 @@
 title: Tips for Using Computers without Feeling Sick
 date: 2019-06-21 12:28:12 -0500
 img: computer-vision-syndrome.jpg
-comments: true
 categories: [Life]
 tags: [computer]
 ---

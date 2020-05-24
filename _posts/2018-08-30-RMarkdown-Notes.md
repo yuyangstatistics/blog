@@ -2,7 +2,6 @@
 title: Rmarkdown Notes
 date: 2018-08-30 12:28:12 -0500
 img: rmarkdown.jpg
-comments: true
 categories: [Tools]
 tags: [rmarkdown]
 ---

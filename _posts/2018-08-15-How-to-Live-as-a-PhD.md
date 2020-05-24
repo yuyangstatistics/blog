@@ -2,7 +2,6 @@
 title: How to Live as a PhD
 date: 2018-08-15 12:28:12 -0500
 img: phd.jpg
-comments: true
 categories: [Life]
 tags: [PhD]
 ---

@@ -2,7 +2,6 @@
 title: Observations in Japan
 date: 2018-06-06 12:28:12 -0500
 img: travel-car.jpg
-comments: true
 categories: [Life]
 tags: [japan]
 ---
