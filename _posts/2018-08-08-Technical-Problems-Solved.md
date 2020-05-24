@@ -1,7 +1,6 @@
 ---
 title: Technical Problems collection
 date: 2018-08-08 12:28:12 -0500
-img: terminal.jpg
 categories: [System]
 tags: [terminal]
 ---

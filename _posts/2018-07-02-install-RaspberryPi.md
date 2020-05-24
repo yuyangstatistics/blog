@@ -1,7 +1,6 @@
 ---
 title: Raspberry Pi Installation
 date: 2018-07-02 12:28:12 -0500
-img: raspberry-pi.jpg
 categories: [System]
 tags: [raspberry-pi]
 ---

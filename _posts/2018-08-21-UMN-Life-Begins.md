@@ -1,7 +1,6 @@
 ---
 title: UMN Life Begins
 date: 2018-08-21
-img: umn_logo.jpg
 categories: [Life]
 tags: [umn]
 ---

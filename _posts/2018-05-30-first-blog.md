@@ -1,7 +1,6 @@
 ---
 title: My First Blog
 date: 2018-05-30 12:28:12 -0500
-img: book-cactus.jpg
 comments: true
 categories: [Blog]
 tags: [jekyll]

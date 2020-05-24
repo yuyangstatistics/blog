@@ -1,7 +1,6 @@
 ---
 title: Python Data Analysis Notes
 date: 2018-12-18 12:28:12 -0500
-img: jupyter.png
 categories: [Data_Science]
 tags: [python]
 ---

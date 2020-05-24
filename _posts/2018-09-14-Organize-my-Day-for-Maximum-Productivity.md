@@ -1,7 +1,6 @@
 ---
 title: Organize my Day for Maximum Productivity
 date: 2018-09-14 12:28:12 -0500
-img: productivity.jpg
 categories: [Life]
 tags: [productivity]
 ---

@@ -1,7 +1,6 @@
 ---
 title: UMN Google Day Notes
 date: 2019-05-23 12:28:12 -0500
-img: umn-google.png
 categories: [Tools]
 tags: [g_suite]
 ---

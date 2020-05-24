@@ -1,7 +1,6 @@
 ---
 title: R Server installation
 date: 2018-10-19 12:28:12 -0500
-img: r-server.jpg
 categories: [Server]
 tags: [r-server]
 ---

@@ -1,7 +1,6 @@
 ---
 title: html and css
 date: 2018-12-23 12:28:12 -0500
-img: html_css.png
 categories: [Programming]
 tags: [html]
 ---

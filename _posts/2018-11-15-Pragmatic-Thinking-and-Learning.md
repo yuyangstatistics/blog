@@ -1,7 +1,6 @@
 ---
 title: Pragmatic Thinking and Learning
 date: 2018-11-15 12:28:12 -0500
-img: pragmatic-thinking.jpg
 categories: [Reading]
 tags: [thinking]
 ---
@@ -32,7 +31,7 @@ This blog is the notes for the book: **Pragmatic Thinking and Learning: Refactor
     > "Ignorance more frequently begets confidence than does knowledge." -- Charles Darwin
 - Most people are just advanced beginners.
 
-![skill distribution]({{site.baseurl}}/assets/img/skill-dist.jpg)
+![skill distribution](/assets/img/posts/skill-dist.jpg)
 
 - Deliberate practice requires four conditions: 
     - A well-defined task.

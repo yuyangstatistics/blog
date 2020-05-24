@@ -1,7 +1,6 @@
 ---
 title: Learning How to Learn
 date: 2018-10-06 12:28:12 -0500
-img: focused-diffused.jpg
 categories: [Reading]
 tags: [learning]
 ---

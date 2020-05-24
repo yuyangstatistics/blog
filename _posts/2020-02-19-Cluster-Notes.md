@@ -1,7 +1,6 @@
 ---
 title: Cluster Notes
 date: 2020-02-19 12:28:12 -0500
-img: hpc-cluster.jpg
 categories: [Server, CSElabs]
 tags: [server]
 ---

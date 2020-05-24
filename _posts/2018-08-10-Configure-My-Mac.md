@@ -1,7 +1,6 @@
 ---
 title: Configure My Mac
 date: 2018-08-10 12:28:12 -0500
-img: mac.jpg
 categories: [System, Configurations]
 tags: [mac]
 ---

@@ -1,7 +1,6 @@
 ---
 title: Markdown Notes
 date: 2018-07-06 12:28:12 -0500
-img: markdown.jpg
 categories: [Tools]
 tags: [markdown]
 ---
