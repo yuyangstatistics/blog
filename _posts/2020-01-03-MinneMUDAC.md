@@ -1,7 +1,6 @@
 ---
 title: MinneMUDAC 2019 Student Data Science Challenge
 date: 2020-01-03 12:28:12 -0500
-img: minnemudac.png
 categories: [Data_Science]
 tags: [minnemudac]
 ---
