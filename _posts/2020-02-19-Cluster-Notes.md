@@ -5,19 +5,16 @@ categories: [Server, CSElabs]
 tags: [server]
 ---
 
-# MSI
+## MSI
 1. [Jupyter Notebook](https://www.msi.umn.edu/support/faq/how-do-i-get-started-jupyter-notebooks)
 2. [FileZilla](https://www.msi.umn.edu/support/faq/how-do-i-use-filezilla-transfer-data) to transfer data files.
 3. [Cuda](https://www.msi.umn.edu/sw/cuda) and [GPU number setting](https://github.com/allenai/allennlp/issues/1090)
 
 Use the same configuration as in CSE Labs, configure ssh to login without password.
 
+## CSE Labs
 
-## Question to ask MSI staff
-1. How to configure the environment for Jupyter notebook? Can I start Jupyter notebook in one environment?
-
-# CSE Labs
-
+### SSH
 1. Set ssh to login without password. Do this on the local machine. Run the following step by step exactly. Check the [reference](http://www.linuxproblem.org/art_9.html) for more detail.
     - Don't change `id_rsa` to other names. Don't enter passphrase. Just press Enter for three times. 
         ```
@@ -68,26 +65,47 @@ Use the same configuration as in CSE Labs, configure ssh to login without passwo
         ```
         ssh phi01
         ```
-5. Modify the prompt format. Copy [git-completion.bash](https://raw.githubusercontent.com/yuyang-yy/materials/master/config/terminal/git-completion.bash) and [git-prompt.sh](https://raw.githubusercontent.com/yuyang-yy/materials/master/config/terminal/git-prompt.sh) files to the cluster machine. Then add the following to the `.bashrc` file.
-    ```
-    # Enable tab completion
-    source ~/git-completion.bash
 
-    # colors!
-    green="\[\033[0;32m\]"
-    blue="\[\033[0;34m\]"
-    purple="\[\033[0;35m\]"
-    reset="\[\033[0m\]"
+### Modify the prompt format. 
+Copy [git-completion.bash](https://raw.githubusercontent.com/yuyang-yy/materials/master/config/terminal/git-completion.bash) and [git-prompt.sh](https://raw.githubusercontent.com/yuyang-yy/materials/master/config/terminal/git-prompt.sh) files to the cluster machine. Then add the following to the `.bashrc` file.
+```sh
+# Enable tab completion
+source ~/git-completion.bash
 
-    # Change command prompt
-    source ~/git-prompt.sh
-    export GIT_PS1_SHOWDIRTYSTATE=1
-    # '\u' adds the name of the current user to the prompt
-    # '\$(__git_ps1)' adds git-related stuff
-    # '\W' adds the name of the current directory
-    export PS1="$purple\u@$green\h\$(__git_ps1)$blue \W $ $reset"
-    ```
-6. My modules are obsolete, and could not load `hpc/openmpi` module. After asking Prof. Saad for help, I got the solution. Edit `~/.bashrc` file. Change the `MODULESINIT` as the following.
-    ```
-    MODULESINIT="/soft/rko-modules/tcl/init/bash"
-    ```
+# colors!
+green="\[\033[0;32m\]"
+blue="\[\033[0;34m\]"
+purple="\[\033[0;35m\]"
+reset="\[\033[0m\]"
+
+# Change command prompt
+source ~/git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1
+# '\u' adds the name of the current user to the prompt
+# '\$(__git_ps1)' adds git-related stuff
+# '\W' adds the name of the current directory
+export PS1="$purple\u@$green\h\$(__git_ps1)$blue \W $ $reset"
+```
+
+### Module issues
+My modules are obsolete, and could not load `hpc/openmpi` module. After asking Prof. Saad for help, I got the solution. Edit `~/.bashrc` file. Change the `MODULESINIT` as the following.
+```
+MODULESINIT="/soft/rko-modules/tcl/init/bash"
+```
+
+## Google Cloud
+
+### Setup SSH
+I found [Connect To The Server Using SSH](https://docs.bitnami.com/google/faq/get-started/connect-ssh/) very helpful. Different from the other clusters, we need first add the public key to the Google Cloud settings (in *Edit*), then use private key to build the ssh tunnel. Suppose the private key you generate is `id_rsa`. Then, 
+```
+ssh-add id_rsa
+ssh -A account-name@external-ip
+```
+
+And modify `.ssh/config`:
+```sh
+Host gcloud
+    HostName external-ip
+    User account-name
+    IdentityFile ~/.ssh/id_rsa
+```
