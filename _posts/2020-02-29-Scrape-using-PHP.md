@@ -9,7 +9,7 @@ I wrote some articles in my Wechat official account before. I worried that some 
 
 Also, Wechat would change the html format occasionally, so you might need some modification if my code doesn't work. But the general idea should be correct.
 
-### Crawl the style, main content, and style of the link.
+## Crawl the style, main content, and style of the link.
 
 ```php
 <?php
@@ -95,7 +95,7 @@ fclose($file);
 ```
 
 
-### Create my own php page
+## Create my own php page
 
 ```php
 <html>

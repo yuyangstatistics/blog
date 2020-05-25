@@ -7,19 +7,6 @@ tags: [g_suite]
 
 Note that some of the features are available only for the business account.
 
-- [Google Docs, Sheets, and Slides](#google-docs-sheets-and-slides)
-- [Google Sites](#google-sites)
-- [Google Tasks](#google-tasks)
-- [Google Keep](#google-keep)
-- [Google Apps script](#google-apps-script)
-- [Google Drive Structure](#google-drive-structure)
-- [Gmail](#gmail)
-- [Google Calendar](#google-calendar)
-- [Google Forms](#google-forms)
-- [Google Hangouts](#google-hangouts)
-- [Other products](#other-products)
-- [General Resources](#general-resources)
-
 ## Google Docs, Sheets, and Slides
 
 1. Tools for Google Docs

@@ -23,6 +23,9 @@ This blog intends to share ideas and share notes with others. Questions and doub
 	$$
 	```
 
+## Table of contents
+In order to have sidebar table of contents, the headings should start from heading 1 or 2, not 3. 
+
 ## Steps to push to Github
 Since there is something wrong with ruby-gem on my mac, so I use Google Cloud to build this blog, and VS Code greatly helps me to edit remote files. After making modifications on the files, `git add` and `git commit`, then
 ```console
