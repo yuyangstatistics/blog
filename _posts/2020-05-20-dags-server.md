@@ -110,7 +110,7 @@ alias jpdags="jupyter notebook --no-browser --port=8889"
 alias jpdags="ssh -N -f -L localhost:8880:localhost:8889 x500@dags; open -a 'Google Chrome' 'http://localhost:8880/tree?'"
 
 # kill related ssh processes
-alias kjpdags="lsof -i:8889"  # this one gives a cleaner output
+alias kjpdags="lsof -i:8880"  # this one gives a cleaner output, it shows the PID related to local port 8880
 # alias kjpdags="ps aux | grep '8889.*dags'"
 ```
 
@@ -203,7 +203,7 @@ function tb(){
 Locally, add the following to `.zshrc`
 ```bash
 alias tbdags="ssh -N -f -L localhost:16006:localhost:6006 x500@dags; open -a 'Google Chrome' 'http://localhost:16006'"
-alias ktbdags="lsof -i:6006"
+alias ktbdags="lsof -i:16006"
 ```
 
 Then what you need to do is
