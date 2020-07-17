@@ -1,0 +1,2 @@
+# exclude system cache files
+*.DS_Store

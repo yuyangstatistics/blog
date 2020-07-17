@@ -13,7 +13,7 @@ To automatically load specific software module or modules every time you log int
 > module load python/conda/3.7
 ```
 
-## Install packages
+## Virtual Environments
 Keep a habit of using virtual environments, especially in a remote server where I am not the root. One biggest different between local machines and remote machines is that you won't have the permission to install packages as you want, and you are only allowed to install packages on your local directory. If you want to install a python package for general purposes, use `pip install --user packagename`. But usually, we work on projects and should set different environments for different projects, so creating a conda virtual environment and install packages inside would be a better idea.
 
 ```bash
@@ -106,11 +106,12 @@ alias jpdags="jupyter notebook --no-browser --port=8889"
 2. Edit `.zshrc` in the local machine.
 
 ```bash
-# establish ssh tunnel and open the browser
-alias jpdags="ssh -N -f -L localhost:8880:localhost:8889 x500@dags; open 'http://localhost:8880/tree?'"
+# establish ssh tunnel and use Chrome to open the link
+alias jpdags="ssh -N -f -L localhost:8880:localhost:8889 x500@dags; open -a 'Google Chrome' 'http://localhost:8880/tree?'"
 
 # kill related ssh processes
-alias kjpdags="ps aux | grep '8889.*dags'"
+alias kjpdags="lsof -i:8889"  # this one gives a cleaner output
+# alias kjpdags="ps aux | grep '8889.*dags'"
 ```
 
 Now, the browser window will automatically open.
@@ -140,6 +141,74 @@ First, check the available cuda modules and the GPU information. In dags server,
 > pip install torch==1.5.0+cu101 torchvision==0.6.0+cu101 -f https://download.pytorch.org/whl/torch_stable.html
 ```
 
+### Tensorboard
+Note that don't install tb-nightly, just tensorboard. And the following steps should be done in the virtual environment.
+
+In order to use tensorboard in remote servers, similar to jupyter notebook, we would need to use ssh tunnels. The complete steps are as follows.
+
+1. Write summary to a logdir. When logdir is not specified, the default is `./runs`. Note that the path here is relative path, so it is important to change directory to the path of this snippet of code of jupyter notebook to use tensorboard.
+	```python
+	from torch.utils.tensorboard import SummaryWriter
+
+	# logdir: runs
+	writer = SummaryWriter()  
+	r = 5
+	for i in range(100):
+		writer.add_scalars('run_14h', {'xsinx':i*np.sin(i/r), \
+			'xcosx':i*np.cos(i/r), 'tanx': np.tan(i/r)}, i)
+	writer.close()
+
+	# logdir: my_experiment
+	writer = SummaryWriter("my_experiment") 
+	for i in range(10):
+		x = np.random.random(1000)
+		writer.add_histogram('distribution centers', x + i, i)
+	writer.close()
+	```
+
+2. Open a new tmux window, activate the corresponding conda virtual environment, change directory to the path of the code or jupyter notebook. You should find the logdir there. Then run the following in shell. We may skip the port option, since the default port for tensorboard is 6006.
+	(1) if use the default logdir.
+ 	```bash
+	tensorboard --logdir=runs --port=6006
+	```
+	(2) if use self-defined logdir, for example, my_experiment.
+	```bash
+	tensorboard --logdir=my_experiment --port=6006
+	```
+
+3. Build ssh tunnel to open tensorboard locally.
+	```bash
+	ssh -N -f -L localhost:16006:localhost:6006 x500@dags
+	```
+
+4. Then we should be able to open `localhost:16006` and see the results.
+
+5. After finishing, do remember to end the tensorboard and kill the tunnels. To kill the tunnels, run the following.
+	```bash
+	lsof -i:6006
+
+	kill -9 PID
+	```
+
+#### Simplify the procedure
+Similar to what we have done in jupyter notebook, we can set aliases to simplify the whole procedure. We use the default port 6006.
+
+Remotely, add the following function to `.bashrc`.
+```bash
+function tb(){
+	tensorboard --logdir=$1
+}
+```
+
+Locally, add the following to `.zshrc`
+```bash
+alias tbdags="ssh -N -f -L localhost:16006:localhost:6006 x500@dags; open -a 'Google Chrome' 'http://localhost:16006'"
+alias ktbdags="lsof -i:6006"
+```
+
+Then what you need to do is
+1. Remotely, write summary, change directory to the code path, then run `tb [logdir]`.
+2. Locally, run `tbdags`. After finishing, run `ktbdags` and `kill -9 <PID>`.
 
 ## Helpful Tools
 
@@ -154,14 +223,50 @@ Install the Remote Development extension pack in VS Code, and this would enable 
 - VS Code would remember your action, so next time you open VS Code, you can directly check recent activities to quickly connect ssh.
 
 ### TMUX
-It is convenient to use tmux to run multiple processes without logging into the same machine for several times. Also, the multiscreen functionality is helpful.
+Check [Tmux Cheat Sheet & Quick Reference](https://tmuxcheatsheet.com) to refresh your memory about hot keys. It would be very helpful if you can memorize them.
 
-- `$tmux`: create a new session.
-- `$tmux list-sessions`: list sessions.
-- `Ctrl + b`: controlling keyword
-	- `+x`: kill a pane
-	- `+"`: split a pane horizontally
-	- `+%`: split a pane vertically
+There are three levels in tmux: sessions, windows, and panes. Usually, we would create a session for a new project, a window for a new task, and a pane for convenient reference when writing code. For example, if I am working on NMT, then I would create a session named `nmt`. Inside this session, I would create a window `jupyter` to open jupyter notebook, `tensorboard` to open tensorboard, `bash` to do the others.
+
+There are several commands that I feel important and used often.
+
+`-t`: target
+`-a`: all but
+
+#### session
+- create
+	- unnamed: `tmux`
+	- named: `tmux new -s [name]`
+- kill
+	- named: `tmux kill-session -t [name]`
+	- all but current: `tmux kill-session -a`
+	- all but named: `tmux kill-session -a -t [name]`
+	- all: `tmux kill-server`
+- rename: `Ctrl+b+$`
+- detach *(jump out of tmux)*: `Ctrl+b+d`
+- attach *(go back into tmux)*
+	- attach the last: `tmux a`
+	- attach named: `tmux a -t [name]`
+- move to the next/previous: `Ctrl+b+(` / `Ctrl+b+)`
+- get tmux session info: `Ctrl+b+s` / `tmux ls`
+
+#### window
+- create: `Ctrl+b+c`
+- rename: `Ctrl+b+,`
+- close: `Ctrl+b+&`
+- move to the next/previous: `Ctrl+b+n` / `Ctrl+b+p`
+- select a specific window: `Ctrl+b+[0-9]`
+- swap windows: `tmux swap-window -s [source] -t [target]`
+
+#### pane
+- create
+	- split vertically: `Ctrl+b+%`
+	- split horizontally: `Ctrl+b+"`
+- close: `Ctrl+b+x`
+- switch among panes
+	- by arrow: `Ctrl+b+[arrow_key]`
+	- by number: `Ctrl+b+q+[0-9]`
+	- to the next pane: `Ctrl+b+o`
+- show pane number: `Ctrl+b+q`
 
 ## Other Configurations
 
