@@ -237,6 +237,7 @@ There are several commands that I feel important and used often.
 	- unnamed: `tmux`
 	- named: `tmux new -s [name]`
 - kill
+	- current: `tmux kill-session`
 	- named: `tmux kill-session -t [name]`
 	- all but current: `tmux kill-session -a`
 	- all but named: `tmux kill-session -a -t [name]`
