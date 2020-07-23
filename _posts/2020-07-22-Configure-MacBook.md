@@ -27,6 +27,8 @@ References:
 
 ## .zshrc
 
+## ssh and git
+Follow my previous notes about server settings and git settings.
 
 ## General
 
