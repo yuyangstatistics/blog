@@ -10,6 +10,29 @@ tags: [MacOS]
 
 ## VSCode
 
+### Plugins
+```
+Python, Remote Development, 
+```
+
+### Keyboard Shortcuts
+References
+- [VS Code Keyboard shortcuts for macOS](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
+
+Display
+- `Cmd+B`: toggle sidebar visibility
+- `Cmd+Shift+E`: show explorer
+- `Cmd+Shift+X`: show extensions
+
+### Remote Development
+References
+- [Remote Development using SSH](https://code.visualstudio.com/docs/remote/ssh)
+
+Install the Remote Development extension pack in VS Code, and this would enable us to use VS Code to edit remote files.
+
+- Open VS Code, press `F1` to open the command plate, select **Remote-SSH: Connect to Host...**, and choose the remote server. I have set ssh configurations, so I can directly see the available remote servers. Done!
+- VS Code would remember your action, so next time you open VS Code, you can directly check recent activities to quickly connect ssh.
+
 
 # Terminal
 
@@ -62,7 +85,18 @@ git config user.email "<email>"
 Secondly, add `id_rsa.pub` to the SSH settings on github website and add shortcuts in `.ssh/config`. Then I shall be able to use git conveniently.
 
 ## Emacs
-Following the instructions on my previous post [Emacs Configuration](https://yuyangyy.com/blog/posts/Emacs-Configuration/), and remove `elpy, flycheck, ein` packages. But the meta key problem has not been fixed yet, temporarily, just use `Esc`.
+
+### Configurations
+Following the instructions on my previous post [Emacs Configuration](https://yuyangyy.com/blog/posts/Emacs-Configuration/), and remove `elpy, flycheck, ein` packages. 
+
+About Meta keys, since there is something different with my left and right option key between apple keyboard and my HP keyboard. I directly change both option keys to Esc+ in iTerm2 settings. `Profiles -> Keys -> Left(Right) Option Key`.
+
+### Keyboard Shortcuts
+References: 
+- [Emacs Shortcut Cheatsheet](https://courses.cs.washington.edu/courses/cse351/16wi/sections/1/Cheatsheet-emacs.pdf)
+- [Emacs Cheat Sheet by David Cohen](http://www.rgrjr.com/emacs/emacs_cheat.html)
+
+*Add frequently used ones here later.*
 
 ## Vim
 I don't plan to use vim a lot, so just simply configure `.vimrc` as follows.
@@ -121,6 +155,94 @@ Then reload tmux environment.
 tmux source ~/.tmux.conf
 ```
 
+# Programming 
+
+## RStudio
+RStudio would automaticaly detect the required r packages once you open a new R file, so we can easily install the packages all at once with a simple click.
+
+### Good Habits to Keep
+1. Create an R project to work with multiple files. In this way, we don't have to set working directory to use data files or refer to other source files.
+
+### Keyboard Shortcuts in RStudio
+References:
+- [Keyboard Shortcuts from RStudio Support](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts)
+
+The following are my frequently used shortcuts.
+- `Cmd+Shift+C`: comment and uncomment
+- `Ctrl+l`: clear console window
+- `Ctrl+1`: switch to source panel
+- `Ctrl+2`: switch to console panel
+
+## Python and Conda
+
+### Configurations
+I used graphical installer, so I need to initialize conda to add Anaconda to PATH. After refering to the [user guide](https://docs.anaconda.com/anaconda/user-guide/faq/). I did the following to initialize conda.
+```bash
+source ~/opt/anaconda3/bin/activate
+conda init
+```
+
+### Good Habits to Keep
+1. Create a virtual environment and install packages inside it whenever we do a project or just some simple analysis. 
+
+### Conda Environments
+References:
+- [Managing Environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+I have installed the following virtual environments, each for a specific usage.
+```
+# create an environment
+conda create -n nlp python=3.7
+# remove an environment
+conda remove --name nlp --all
+# check environment info
+conda info --envs
+```
+
+#### environment.yml
+Export `environment.yml` for your conda environment.
+```bash
+conda activate nlp
+conda env export > environment.yml
+conda deactivate
+```
+
+To create an environment using the `environment.yml` file. The generated environment will have the same name and same packages as the original environment.
+```bash
+conda env create -f environment.yml
+```
+
+#### nlp env
+```bash
+conda activate nlp
+# upgrade pip
+pip install -U pip
+# install jupyter
+pip install notebook
+# install pytorch
+pip install torch torchvision
+# install tensorboard
+pip install tensorboard
+conda deactivate
+```
+
+#### dt env
+`dt` is used for data analysis.
+
+```bash
+conda create -n dt python=3.7 scipy
+
+conda activate dt
+pip install notebook
+pip install pandas
+pip install lightgbm
+pip install xgboost
+pip install catboost
+pip install shap
+
+conda deactivate
+```
+
+
 # General
 
 ## Keyboard
@@ -135,3 +257,8 @@ For MacBook Keyboard
 For my HP keyboard
 - `Ctrl <-> Caps Lock`: swap it as well.
 - `Option <-> Cmd`: I swap it on the key mappings and on the phisical keyboard.
+
+## Dock
+- Check *Automatically hide and show the Dock*.
+- Uncheck *Show recent applications in Dock*.
+- Put the dock to the left side.
