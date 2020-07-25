@@ -12,7 +12,7 @@ tags: [MacOS]
 
 ### Plugins
 ```
-Python, Remote Development, 
+Python, Remote Development, C/C++, Markdown Preview Enhanced, 
 ```
 
 ### Keyboard Shortcuts
@@ -34,6 +34,10 @@ Install the Remote Development extension pack in VS Code, and this would enable 
 - VS Code would remember your action, so next time you open VS Code, you can directly check recent activities to quickly connect ssh.
 
 
+## TexStudio
+
+I used a Solarized Light theme in [Francis-Hsu's Github](https://github.com/Francis-Hsu/TeXstudio_Solarized). First, I copied the file and save it as `Solarized_Light.txsprofile`, then `Options-> Load Profile` to load it. Note that we need restart TexStudio for the modification to take effects. Another way is to modify the `[format]` section in the setting file `~/.config/texstudio/texstudio.ini`.
+
 # Terminal
 
 ## Homebrew
@@ -44,6 +48,7 @@ Install the Remote Development extension pack in VS Code, and this would enable 
 5. Install wget: `brew install wget`
 6. Install zsh-completions: `brew install zsh-completions`
 7. Install zsh-syntax-highlighting: `brew install zsh-syntax-highlighting`
+8. Install OpenMP: `brew install libomp`
 
 ## iTerm
 References:
@@ -80,6 +85,9 @@ git config --global user.email "<email>"
 # repository-specific configuration
 git config user.name "<name>"
 git config user.email "<email>"
+# show the git config info for current git repo
+git config user.name
+git config --list
 ```
 
 Secondly, add `id_rsa.pub` to the SSH settings on github website and add shortcuts in `.ssh/config`. Then I shall be able to use git conveniently.
@@ -137,6 +145,7 @@ Install tmux plugin manager and plugins.
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ```
 
+
 Edit `.tmux.conf` file as follows.
 ```bash
 # List of plugins
@@ -148,11 +157,10 @@ run '~/.tmux/plugins/tpm/tpm'
 
 # enable mouse scrolling
 set -g mouse on
-```
 
-Then reload tmux environment.
-```bash
-tmux source ~/.tmux.conf
+# solve the conda env issue
+# Reference: https://stackoverflow.com/a/62705965/13448382
+set -g default-command "/bin/zsh"
 ```
 
 # Programming 
@@ -176,12 +184,28 @@ The following are my frequently used shortcuts.
 ## Python and Conda
 
 ### Configurations
+#### Anaconda Configurations
 I used graphical installer, so I need to initialize conda to add Anaconda to PATH. After refering to the [user guide](https://docs.anaconda.com/anaconda/user-guide/faq/). I did the following to initialize conda.
 ```bash
 source ~/opt/anaconda3/bin/activate
 conda init
 ```
 
+#### Jupyter Configurations
+- Set Chrome as the default browser for Jupyter.
+    ```bash
+    # create jupyter config file if not exists
+    # jupyter notebook --generate-config
+    # open config file if it exists
+    em ~/.jupyter/jupyter_notebook_config.py
+    # modify the browser setting
+    c.NotebookApp.browser = u'open -a /Applications/Google\ Chrome.app %s'
+    ```
+- Install extensions
+    ```bash
+    conda install -c conda-forge jupyter_contrib_nbextensions
+    conda install -c conda-forge jupyter_nbextensions_configurator
+    ```
 ### Good Habits to Keep
 1. Create a virtual environment and install packages inside it whenever we do a project or just some simple analysis. 
 
@@ -244,6 +268,9 @@ conda deactivate
 
 
 # General
+
+## iCloud
+Defaultly, when using a new device, iCloud will not download all the files on the cloud to local home directory, instead, it will keep the old versions on the cloud. To download all the files, `System Preferences -> Apple ID`, uncheck `Optimize Mac Storage`.
 
 ## Keyboard
 
