@@ -10,9 +10,15 @@ tags: [MacOS]
 
 ## VSCode
 
-### Plugins
+It is a good habit to use workspaces for a project.
+
+### Settting
+- disable minimap(code preview): `"editor.minimap.enabled": false`.
+- hide workbench activity bar: `"workbench.activityBar.visible": false`.
+
+### Extensions
 ```
-Python, Remote Development, C/C++, Markdown Preview Enhanced, 
+Python, Remote Development, C/C++, Markdown Preview Enhanced, Bracket Pair Colorizer 2
 ```
 
 ### Keyboard Shortcuts
@@ -175,11 +181,16 @@ RStudio would automaticaly detect the required r packages once you open a new R 
 References:
 - [Keyboard Shortcuts from RStudio Support](https://support.rstudio.com/hc/en-us/articles/200711853-Keyboard-Shortcuts)
 
+I have changed key bindings for comment to `Cmd+/`.
+
 The following are my frequently used shortcuts.
-- `Cmd+Shift+C`: comment and uncomment
+- `Cmd+/`: comment and uncomment
 - `Ctrl+l`: clear console window
 - `Ctrl+1`: switch to source panel
 - `Ctrl+2`: switch to console panel
+
+### Preferences Settings
+1. Uncheck *Show output inline for all R Markdown documents* in *Preferences -> R Markdown*. 
 
 ## Python and Conda
 
@@ -202,10 +213,27 @@ conda init
     c.NotebookApp.browser = u'open -a /Applications/Google\ Chrome.app %s'
     ```
 - Install extensions
+    This is not a system-wide configuration, but an environment-based one. Therefore, for each environment we create, we need to run it again.
     ```bash
     conda install -c conda-forge jupyter_contrib_nbextensions
     conda install -c conda-forge jupyter_nbextensions_configurator
     ```
+- Useful Settings inside a notebook
+    ```python
+    # control the maximum columns displayed
+    import pandas as pd
+    pd.set_option('display.max_columns', 999)
+    # suppress warnings output
+    import warnings
+    warnings.simplefilter('ignore')
+    ```
+- Create a kernel for R. Run the following in R in terminal, then you should see the R option in Jupyter.
+    ```r
+    IRkernel::installspec()
+    ```
+
+
+
 ### Good Habits to Keep
 1. Create a virtual environment and install packages inside it whenever we do a project or just some simple analysis. 
 
@@ -222,48 +250,30 @@ conda remove --name nlp --all
 conda info --envs
 ```
 
-#### environment.yml
-Export `environment.yml` for your conda environment.
-```bash
-conda activate nlp
-conda env export > environment.yml
-conda deactivate
+#### Share an environment
+Manually create an environment `environment.yml` file. This is better than automatically generated one, since it doesn't have the across platform issue.
+```yml
+name: myenv
+dependencies:
+  - python=3.7
+  - numpy
+  - pandas
+  - scipy
+  - pip
+  - pip:
+    - notebook
+    - shap
+    - catboost
+    - lightgbm
+    - xgboost
+    - matplotlib
 ```
 
-To create an environment using the `environment.yml` file. The generated environment will have the same name and same packages as the original environment.
+Not just for sharing, for convenience, whenever we want to create a new conda environment, we can first write the `environment.yml` file, and then use it to quickly create the desired environment.
+
 ```bash
+# create an environment using yml file
 conda env create -f environment.yml
-```
-
-#### nlp env
-```bash
-conda activate nlp
-# upgrade pip
-pip install -U pip
-# install jupyter
-pip install notebook
-# install pytorch
-pip install torch torchvision
-# install tensorboard
-pip install tensorboard
-conda deactivate
-```
-
-#### dt env
-`dt` is used for data analysis.
-
-```bash
-conda create -n dt python=3.7 scipy
-
-conda activate dt
-pip install notebook
-pip install pandas
-pip install lightgbm
-pip install xgboost
-pip install catboost
-pip install shap
-
-conda deactivate
 ```
 
 

@@ -273,3 +273,20 @@ There are several commands that I feel important and used often.
 
 ### aliases
 - I uncommented `unalias rm` in the `.bash_aliases` file, since the rm questions are disturbing.
+
+### SSH
+References:
+- [client_loop: send disconnect: Broken pipe](https://www.nixcraft.com/t/client-loop-send-disconnect-broken-pipe/2708/4)
+
+I came across the error message `client_loop: send disconnect: Broken pipe` many times, and it turns out it has to do with inactive connection. Three options are related to keeping connection alive: `TcpKeepAlive`, `ServerAliveInterval`, `ServerAliveCountMax`. So I modify the ssh configuation file a bit, as follows. Now, my client will sent "keep-alive" message to the server every 60 seconds, and after 60 counts without response, the connection will consider it as inactive and break the pipe.
+
+```bash
+Host dags
+     HostName xxx
+     User xxx
+     IdentityFile xxx
+     UseKeychain yes
+     TcpKeepAlive yes
+     ServerAliveInterval 60
+     ServerAliveCountMax 60
+```
