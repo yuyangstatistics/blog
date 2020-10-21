@@ -141,6 +141,8 @@ First, check the available cuda modules and the GPU information. In dags server,
 > pip install torch==1.5.0+cu101 torchvision==0.6.0+cu101 -f https://download.pytorch.org/whl/torch_stable.html
 ```
 
+Or, we don't need to consider the cuda version at all. Directly specifying `torch` in the `environment.yml` works as well.
+
 ### Tensorboard
 Note that don't install tb-nightly, just tensorboard. And the following steps should be done in the virtual environment.
 

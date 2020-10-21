@@ -58,7 +58,7 @@ Use the same configuration as in CSE Labs, configure ssh to login without passwo
         ```
         Host phi01
             HostName phi01.cselabs.umn.edu
-            User yang6367
+            User x500
             IdentityFile ~/.ssh/id_rsa
         ```
     - Then we can switch among the clusters. For example, inside the lind machine, switch to phi01 machine.
