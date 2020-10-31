@@ -6,7 +6,7 @@ tags: [minnemudac]
 ---
 MinneMUDAC 2019 Student Data Challenge is organized by MinneAnalytics every year. There are several divisions: novice division, undergradutate division, and graduate division. For 2019, the problem is to predict the price of soybean future contracts in the volatile market for one week. 
 
-Among 24 graduate teams, we ranked 2nd and won Analytic Acumen Award. Our work was greatly appreciated by the judges and people in the industry. And we have been invited to give talks in companies and organizations. This blog is to share part of our work, and hope it might be helpful. Check [my github](https://github.com/yuyangstatistics/projects/tree/master/MinneMUDAC) for more detail about this project.
+Among 24 graduate teams, we ranked 2nd and won Analytic Acumen Award. Our work was greatly appreciated by the judges and people in the industry. And we have been invited to give talks in companies and organizations. This blog is to share part of our work, and hope it might be helpful. Check [my github](https://github.com/yuyangstatistics/projects/tree/main/MinneMUDAC) for more detail about this project.
 
 This blog will not talk in detail about the results of our model, but will focus more on the methods and whole modeling pipeline. The framework is as follow:
 - Introduction to the project
