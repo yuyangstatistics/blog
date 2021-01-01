@@ -21,9 +21,8 @@
 
 # Complete the url below to enable more contact options
 -
-  type: linkedin
   icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
-  #url:  'www.linkedin.com/in/yuyangstat'   # Fill with your Linkedin homepage
+  url:  ''   # Fill with your Linkedin homepage
 -
   icon: 'fab fa-stack-overflow'
   url:  ''                  # Fill with your stackoverflow homepage
