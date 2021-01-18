@@ -7,13 +7,13 @@ tags: [html]
 
 ## HTML Notes
 The notes for the edX course: Programming for the Web with Javascript can be found in the following links.
-- [Week1 html]({{site.baseurl}}/assets/htmls/html-learning.html). Or you could directly view the [Week1 source code](https://raw.githubusercontent.com/yuyang-yy/materials/master/html/index.html). 
-- [Week2 DOM html]({{site.baseurl}}/assets/htmls/week2-dom.html) and [Week2 jQuery html]({{site.baseurl}}/assets/htmls/week2-jquery.html).
+- [Week1 html]({{site.baseurl}}/assets/files/html-learning.html). Or you could directly view the [Week1 source code](https://raw.githubusercontent.com/yuyang-yy/materials/master/html/index.html). 
+- [Week2 DOM html]({{site.baseurl}}/assets/files/week2-dom.html) and [Week2 jQuery html]({{site.baseurl}}/assets/files/week2-jquery.html).
 
 
 
 ## JavaScript Notes
-The notes of a YouTube online course [Learn JavaScript - Full Course for Beginners](https://www.youtube.com/watch?v=PkZNo7MFNFg&t=11105s) is [here]({{site.baseurl}}/assets/code/js-learning.js).
+The notes of a YouTube online course [Learn JavaScript - Full Course for Beginners](https://www.youtube.com/watch?v=PkZNo7MFNFg&t=11105s) is [here]({{site.baseurl}}/assets/files/jquery.js).
 
 ## HTML
 ``` html
