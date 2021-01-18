@@ -529,7 +529,6 @@ Modern society is a delayed-return environment, and the human brain hasn't evolv
 
 > Make avoidance visible.
 
-Whenever I skip watching a video, transfer $5 into my investment account. 
 Whenever I pass on a purchase, put the same amount of money into my investment account.
 
 > It is worth noting that it is important to select short-term rewards that reinforce your identity rather than ones that conflict with it. If your reward for exercising is eating a bowl of ice cream, then you’re casting votes for conflicting identities, and it ends up being a wash. Instead, maybe your reward is a massage, which is both a luxury and a vote toward taking care of your body. 
@@ -559,7 +558,7 @@ Whenever I pass on a purchase, put the same amount of money into my investment a
 >
 > After [CURRENT HABIT], I will [TRACK MY HABIT].
 
-I set up a habit tracker using Google Sheet and now I track four habits: (1) get up before 6:30 am; (2) do morning exercise; (3) read 2 pages of research paper; (4) go to bed before 10:00 pm. 
+I set up a habit tracker using Microsoft To Do, and now I track three habits: (1) get up before 6:30 am; (2) do morning exercise; (3) read 2 pages of research paper. The finish sound of each task is satisfying and will give me immediate reward.
 
 
 #### How to Recover Quickly When Your Habits Break Down
